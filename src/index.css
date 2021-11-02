@@ -1,0 +1,21 @@
+#id {
+  height: 100vh;
+}
+.todoList {
+  margin-top: 40px;
+}
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+h4 {
+  color: slategrey;
+  display: inline-block;
+  margin: 0 0 0 20px !important;
+  padding: 0 !important;
+}
+.done {
+  text-decoration: line-through;
+}
