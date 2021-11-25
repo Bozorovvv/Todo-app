@@ -3,10 +3,11 @@ import Input from "./components/Input";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos] = useState([
+  const [todos, setTodos] = useState([
     { id: 1, name: "send message", completed: false },
     { id: 2, name: "fix auto", completed: false },
     { id: 3, name: "but something", completed: false },
+    { id: 4, name: "Go home", completed: false },
   ]);
 
   function deleteTodoItem(id) {
