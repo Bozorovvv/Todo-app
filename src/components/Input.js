@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 
 function Input({ addTodo, todos }) {
-  const [input, setInput] = useState("");
+  const [value, setValue] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    addTodo({ id: todos.length + 1, name: input });
-    setInput("");
+    addTodo({ id: todos.length + 1, name: value });
+    setValue("");
   }
 
   function handleChange(e) {
-    setInput(e.target.value);
+    setValue(e.target.value);
+    console.log(value);
   }
 
   return (
@@ -21,7 +22,7 @@ function Input({ addTodo, todos }) {
         onSubmit={handleSubmit}
       >
         <input
-          value={input}
+          value={value}
           onChange={handleChange}
           type="text"
           className="form-control"

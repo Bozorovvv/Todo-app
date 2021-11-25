@@ -3,8 +3,7 @@ import Input from "./components/Input";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([
+  const [todos] = useState([
     { id: 1, name: "send message", completed: false },
     { id: 2, name: "fix auto", completed: false },
     { id: 3, name: "but something", completed: false },
@@ -14,13 +13,10 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
   function addTodo(todo) {
-    if (!todo.name == "") {
-      const newTodos = [...todos, todo];
-      setTodos(newTodos);
-      console.log(todos);
-    } else {
-      alert("Input is empty");
-    }
+    if (todo.name === "") return;
+    const newTodos = [...todos, todo];
+    setTodos(newTodos);
+    console.log(todos);
   }
   function onCompleted(id) {
     setTodos(
@@ -41,9 +37,9 @@ function App() {
             <h1 className="d-flex align-items-center justify-content-center">
               Todo-app
             </h1>
+            <Input todos={todos} addTodo={addTodo} />
             {todos.length ? (
               <>
-                <Input todos={todos} input={input} addTodo={addTodo} />
                 <TodoList
                   todos={todos}
                   deleteTodoItem={deleteTodoItem}
