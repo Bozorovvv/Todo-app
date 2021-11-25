@@ -3,7 +3,7 @@ import Input from "./components/Input";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([
+  const [todos] = useState([
     { id: 1, name: "send message", completed: false },
     { id: 2, name: "fix auto", completed: false },
     { id: 3, name: "but something", completed: false },
@@ -13,7 +13,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
   function addTodo(todo) {
-    if (todo.name == "") return;
+    if (todo.name === "") return;
     const newTodos = [...todos, todo];
     setTodos(newTodos);
     console.log(todos);
